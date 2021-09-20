@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Calistoga&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+/* nav icon portion */
+input {
+  display: none;
+}
+
+.nav-menu-icon {
+  position: absolute;
+  height: 3.5rem;
+  width: 4rem;
+}
+
+.nav-hash {
+  height: 0.5rem;
+  width: 3rem;
+  border-radius: 0.3rem;
+  background-color: red;
+}
+
+.nav-hash-1 {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  transition: all 1s;
+}
+
+.nav-hash-2 {
+  position: absolute;
+  top: 1.5rem;
+  left: 0.5rem;
+  transition: all 1s;
+}
+
+.nav-hash-3 {
+  position: absolute;
+  top: 2.5rem;
+  left: 0.5rem;
+  transition: all 1s;
+}
+
+/* brand portion */
+.nav-brand {
+  width: 100vw;
+  height: 3.5rem;
+  background-color: blue;
+  padding-top: 0.5rem;
+  box-shadow: 0.01rem 0.01rem 1rem darkslategray;
+}
+
+.nav-img-brand {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: auto;
+  display: block;
+}
+
+/* nav list portion */
+.nav-list {
+  background-color: blue;
+  height: 0;
+  width: min-content;
+  transition: all 0.75s;
+  overflow: hidden;
+  box-shadow: 0.01rem 0.01rem 1rem darkslategray;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.nav-link {
+  display: block;
+  width: 16rem;
+  height: 3.5rem;
+  border-bottom: 0.01rem solid lightblue;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 0.5rem;
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.nav-link:last-of-type {
+  border-bottom: none;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: red;
+}
+
+/* TOGGLE ICON & NAV MENU LIST */
+input:checked + label .nav-hash-1 {
+  top: 1.5rem;
+  transform: rotate(45deg);
+  transition: all 1s;
+}
+
+input:checked + label .nav-hash-2 {
+  background-color: transparent;
+  transition: all 1s;
+}
+
+input:checked + label .nav-hash-3 {
+  top: 1.5rem;
+  transform: rotate(-45deg);
+  transition: all 1s;
+}
+
+input:checked ~ .nav-list {
+  height: 10.5rem;
+}
+
+@media screen and (min-width: 720px) {
+  nav {
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-brand {
+    width: min-content;
+    box-shadow: none;
+  }
+
+  nav label {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 3.5rem;
+    width: min-content;
+    box-shadow: none;
+  }
+
+  .nav-link {
+    width: 12rem;
+    border-bottom: none;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    background-color: transparent;
+    text-shadow: 0.1rem 0.1rem 0.5rem white, -0.1rem -0.1rem 0.5rem white;
+  }
+
+  input:checked ~ .nav-list {
+    height: 3.5rem;
+  }
+}
